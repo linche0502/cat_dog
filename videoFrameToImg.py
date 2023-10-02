@@ -17,11 +17,11 @@ base_path= os.path.abspath(os.path.dirname(__file__))
 # 從youtube下載(預定)
 if path.startswith("http"):
     from pytube import YouTube
-    from pydub import AudioSegment
-    from pydub.utils import get_array_type
     youtube= YouTube(path)
     video= youtube.streams.filter().first()
-    
+    video.download(os.path.join(base_path,"data/video/temp.mp4"))
+    capture = cv2.VideoCapture(os.path.join(base_path,"data/video/temp.mp4"))
+
 # 載入現有影片
 else:
     capture = cv2.VideoCapture(os.path.join(base_path, path))
