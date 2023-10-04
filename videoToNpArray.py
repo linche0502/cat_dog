@@ -2,7 +2,7 @@
 import sys, os
 sys.path.append(os.path.dirname(__file__))
 
-
+import tk
 from dlclive import DLCLive, Processor
 
 dlc_proc = Processor()
